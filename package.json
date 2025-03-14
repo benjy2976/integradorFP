@@ -1,0 +1,32 @@
+{
+    "name": "integrador-fp",
+    "version": "1.0.0",
+    "description": "herramienta para integracion de aplicaciones a el aplicativo FirmaPeru",
+    "main": "src/FirmaPeruIntegrador.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/benjy2976/integradorFP.git"
+    },
+    "keywords": [
+      "firma-peru",
+      "firma",
+      "elecronica",
+      "peru"
+    ],
+    "author": "Walther Raul II Benjamin Aguirre Tello",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/benjy2976/integradorFP/issues"
+    },
+    "homepage": "https://github.com/benjy2976/integradorFP#readme",
+    "dependencies": {
+      "axios": "^0.21.1"
+    },
+    "devDependencies": {
+      "eslint": "^8.35.0",
+      "eslint-config-standard": "^17.0.0"
+    }
+  }
