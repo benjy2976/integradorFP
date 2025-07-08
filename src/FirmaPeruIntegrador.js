@@ -1,6 +1,7 @@
 import axios from 'axios'
 export default class FirmaPeruIntegrador {
   constructor(config) {
+    this.instance= instance==null?axios.create():instance//axios instance
     let defaultValues = {
       port            : 48596,
       count           : 0,
@@ -88,6 +89,7 @@ export default class FirmaPeruIntegrador {
     return OSName
   }
   get AppFirmaPeru(){
+    // var clickonce="jnlps://apps.firmaperu.gob.pe/web/jwslauncher.jsp"
     var clickonce="https://resources.firmaperu.gob.pe/app/clickonce/clienteweb/FirmaPeruWeb.application"
     var jws="jnlps://apps.firmaperu.gob.pe/web/jwslauncher.jsp";
     switch(this.OSName){
@@ -128,7 +130,7 @@ export default class FirmaPeruIntegrador {
     }
   }
   checkServer(){
-    axios.get(this.host, this.axiosConfig)
+    this.instance.get(this.host, this.axiosConfig)
       .then((r)=>{
         if("ok"===r.data.status){
           clearInterval(this.interCheck)
@@ -160,7 +162,7 @@ export default class FirmaPeruIntegrador {
       this.signatureInit()
       clearInterval(this.inter)
       this.inter=setInterval(()=>{
-        axios.get(this.host, this.axiosConfig)
+        this.instance.get(this.host, this.axiosConfig)
           .then((r)=>{
             if("ok"===r.data.status){
               clearInterval(this.inter)
