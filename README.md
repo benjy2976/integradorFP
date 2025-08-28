@@ -6,7 +6,7 @@ Integrador de aplicacion FirmaPeru en soluciones Javascript
 usando npm:
 
 ```bash
-$ npm install ------
+npm i @benjy2976/integrador-fp
 ```
 ## Ejemplo
 
@@ -15,7 +15,7 @@ $ npm install ------
 //la inicializacion de la instancia de axios da la posibilidad de personalizarla, con datos como el token de acceso
 let instance = axios.create()
 
-import FirmaPeruIntegrador from './FirmaPeruIntegrador';
+import FirmaPeruIntegrador from '@benjy2976/integrador-fp';
 // la ruta para obtener los parametros sera por POST a http://127.0.0.1/parametros/{file_id}'
 let url_parametros 'http://127.0.0.1:8000/parametros'
 let id_file=null
