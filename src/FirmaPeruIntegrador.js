@@ -1,7 +1,6 @@
 import axios from 'axios'
 export default class FirmaPeruIntegrador {
   constructor(config) {
-    this.instance= instance==null?axios.create():instance//axios instance
     let defaultValues = {
       port            : 48596,
       count           : 0,
@@ -12,7 +11,8 @@ export default class FirmaPeruIntegrador {
       signatureCancel : ()=>{},
       getParams       : ()=>{},
       idApp           : 'addComponent',
-      vervose         : false
+      vervose         : false,
+      instance        : false
     }
     defaultValues       = Object.assign(defaultValues, config)
     this.port           = defaultValues.port
@@ -27,6 +27,7 @@ export default class FirmaPeruIntegrador {
     this.getParams      = defaultValues.getParams
     this.idApp          = defaultValues.idApp
     this.vervose        = defaultValues.vervose
+    this.instance       = defaultValues.instance==null?axios.create():defaultValues.instance//axios instance
     this.message        = ''
     this.serverOnline   = false
     this.serverStarting = false
